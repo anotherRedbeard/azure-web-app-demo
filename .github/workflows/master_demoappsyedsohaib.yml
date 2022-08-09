@@ -3,10 +3,7 @@
 
 name: Build and deploy Node.js app to Azure Web App - demoappsyedsohaib
 
-on:
-  push:
-    branches:
-      - master
+on: fork
 
 jobs:
   build-and-deploy:
