@@ -15,6 +15,12 @@
     <title>Deployment with Azure</title>
 </head>
 <body>
+    <script>
+        function showAlert() {
+            alert ("Hello world!");
+            alert ({{url_checker}});
+        }
+    </script>
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KVXVBSV"
         height="0" width="0" style="display:none;visibility:hidden"></iframe>
@@ -31,5 +37,6 @@
     }
     </style>
     <h1 class="head">Deployment with Azure in 4.5 minutes</h1>
+    <button onclick="showAlert()">Show alert</button>
 </body>
 </html>
