@@ -39,7 +39,11 @@
     <button onclick="showAlert()">Show chat</button>
 
     <script type="text/javascript" id="">
-        var dataSource=document.querySelector(".d365-mkt-config"),OmnichannelDataAppId=dataSource.dataset.appId,OmnichannelDataOrgId=dataSource.dataset.orgId,OmnichannelScriptDataOrgUrl=dataSource.dataset.orgUrl,script=document.createElement("script");
+        var dataSource=document.querySelector(".d365-mkt-config");
+        var OmnichannelDataAppId=dataSource.dataset.appId;
+        var OmnichannelDataOrgId=dataSource.dataset.orgId;
+        var OmnichannelScriptDataOrgUrl=dataSource.dataset.orgUrl;
+        var script=document.createElement("script");
         script.id="Microsoft_Omnichannel_LCWidget";
         script.src="https://oc-cdn-ocprod.azureedge.net/livechatwidget/scripts/LiveChatBootstrapper.js";
         script.dataset.appId=OmnichannelDataAppId;
@@ -48,6 +52,7 @@
         script.dataset.orgUrl=OmnichannelScriptDataOrgUrl;
         script.dataset.colorOverride="#0078BF";
         script.dataset.fontFamilyOverride="Arial";
+        script.dataset.hideChatButton="true";
         var scriptId=document.querySelector("#ccf-lcwidget-chat");
         scriptId.parentElement.append(script);
     </script>
