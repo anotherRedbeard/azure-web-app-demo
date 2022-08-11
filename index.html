@@ -15,11 +15,7 @@
     <title>Deployment with Azure</title>
 </head>
 <body>
-    <script>
-        function showAlert() {
-            alert ({{url_checker}});
-        }
-    </script>
+    
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KVXVBSV"
         height="0" width="0" style="display:none;visibility:hidden"></iframe>
@@ -35,7 +31,39 @@
     color: rgb(45, 45, 226);
     }
     </style>
+    <div id="ccf-lcwidget-chat" class="d365-mkt-config" style="display:none" data-website-id="89JF2Fa-exV-5ixaiTVui1y_gqYcnxAVAB0ZZvIj8rs" 
+            data-hostname="ca264331a46e4359af48029ef070df94.svc.dynamics.com" data-app-id="24d50ba7-292e-432a-a2dc-5301efa26059" data-org-id="ae29c25f-ef18-4541-9c21-4ce5c6c1c633" 
+            data-org-url="https://orga370c35a-crm.omnichannelengagementhub.com">
+    </div>
     <h1 class="head">Deployment with Azure in 4.5 minutes</h1>
-    <button onclick="showAlert()">Show alert</button>
+    <button onclick="showAlert()">Show chat</button>
+
+    <script type="text/javascript" id="">
+        var dataSource=document.querySelector(".d365-mkt-config"),OmnichannelDataAppId=dataSource.dataset.appId,OmnichannelDataOrgId=dataSource.dataset.orgId,OmnichannelScriptDataOrgUrl=dataSource.dataset.orgUrl,script=document.createElement("script");
+        script.id="Microsoft_Omnichannel_LCWidget";
+        script.src="https://oc-cdn-ocprod.azureedge.net/livechatwidget/scripts/LiveChatBootstrapper.js";
+        script.dataset.appId=OmnichannelDataAppId;
+        script.dataset.lcwVersion="prod";
+        script.dataset.orgId=OmnichannelDataOrgId;
+        script.dataset.orgUrl=OmnichannelScriptDataOrgUrl;
+        script.dataset.colorOverride="#0078BF";
+        script.dataset.fontFamilyOverride="Arial";
+        var scriptId=document.querySelector("#ccf-lcwidget-chat");
+        scriptId.parentElement.append(script);
+    </script>
+
+    <script>
+        function contextProvider(){
+            return {
+                'va_PageUrl': {'value': queue, 'isDisplayable': true},
+                'SelfService': {'value': sessionStorage.getItem("SelfService")}
+            };
+        }
+
+        function showAlert() {
+            Microsoft.Omnichannel.LiveChatWidget.SDK.setContextProvider(contextProvider);
+            Microsoft.Omnichannel.LiveChatWidget.SDK.startChat();
+        }
+    </script>
 </body>
 </html>
