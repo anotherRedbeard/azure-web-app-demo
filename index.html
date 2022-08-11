@@ -38,7 +38,7 @@
     <h1 class="head">Deployment with Azure in 4.5 minutes</h1>
     <button onclick="showAlert()">Show health bot</button>
     <button onclick="toggleAzureBot()">Show/hide azure bot</button>
-    <iframe class="azure-bot" style="display:none ;" src='https://webchat.botframework.com/embed/scus-botservice-wa?s=Ha6rAb7Zxfg.LnEWUQof-0jWUcGCfsG1asq5GFLiYeQqUTEtBSn4dCk'  style='min-width: 400px; width: 100%; min-height: 500px;'></iframe>
+    <iframe class="azure-bot" style="display:block; visibility:hidden" src='https://webchat.botframework.com/embed/scus-botservice-wa?s=Ha6rAb7Zxfg.LnEWUQof-0jWUcGCfsG1asq5GFLiYeQqUTEtBSn4dCk'  style='min-width: 400px; width: 100%; min-height: 500px;'></iframe>
 
     <script type="text/javascript" id="">
         var dataSource=document.querySelector(".d365-mkt-config");
@@ -73,11 +73,11 @@
         }
 
         function toggleAzureBot() {
-            var disp = document.querySelector(".azure-bot").style.display;
-            if (disp === "none"){
-                disp = "block"
+            var st = document.querySelector(".azure-bot").style;
+            if (st.visibility === "hidden"){
+                st.visibility = "visible"
             } else {
-                disp = "none"
+                st.visibility = "hidden"
             }
         }
     </script>
