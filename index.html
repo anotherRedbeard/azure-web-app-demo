@@ -6,6 +6,7 @@
         $(document).ready(function() {
             $.getJSON('https://jsonip.com/', function(data) {
                 console.log(JSON.stringify(data, null, 2));
+                $('.ip').html(data.ip);
             });
         })
     </script>
