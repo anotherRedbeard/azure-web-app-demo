@@ -36,6 +36,10 @@
             data-org-url="https://orga370c35a-crm.omnichannelengagementhub.com">
     </div>
     <h1 class="head">Deployment with Azure in 4.5 minutes</h1>
+    <h3>
+        <div>Hello, I can haz your ip?</div>
+        <div class="ip">guess</div>
+    </h3>
     <button onclick="showAlert()">Show health bot</button>
     <button onclick="toggleAzureBot()">Show/hide azure bot</button>
     <iframe class="azure-bot" style="display:block; visibility:hidden" src='https://webchat.botframework.com/embed/scus-botservice-wa?s=Ha6rAb7Zxfg.LnEWUQof-0jWUcGCfsG1asq5GFLiYeQqUTEtBSn4dCk'  style='min-width: 400px; width: 100%; min-height: 500px; height: 500px;'></iframe>
@@ -80,6 +84,12 @@
                 st.visibility = "hidden"
             }
         }
+    </script>
+
+    <script>
+        $.getJSON('https://jsonip.com/', function(data) {
+            console.log(JSON.stringify(data, null, 2));
+        });
     </script>
 </body>
 </html>
