@@ -6,7 +6,9 @@
         $(document).ready(function() {
             $.getJSON('https://red-cus-sandbox-minimal-api.azurewebsites.net/', function(data) {
                 console.log(JSON.stringify(data, null, 2));
-                $('.ip').html(data.ip);
+                $('.private-ip').html(data.privateIp);
+                $('.host').html(data.hostName);
+                $('.public-ip').html(data.publicIp);
             });
         })
     </script>
@@ -47,7 +49,9 @@
     <h1 class="head">Deployment with Azure in 4.5 minutes</h1>
     <h3>
         <div>Hello, I can haz your ip?</div>
-        <div class="ip">guess</div>
+        <div class="private-ip">guess</div>
+        <div class="host"></div>
+        <div class="public-ip"></div>
     </h3>
     <button onclick="showAlert()">Show health bot</button>
     <button onclick="toggleAzureBot()">Show/hide azure bot</button>
